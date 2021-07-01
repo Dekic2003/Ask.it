@@ -1,7 +1,6 @@
 import React from 'react'
 
 const QuestionCard = (data) => {
-    console.log(data.data)
     return(
         <div>
             <div
@@ -39,7 +38,7 @@ const QuestionCard = (data) => {
                                     <path
                                         d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"></path>
                                 </svg>
-                                {' Comment'}
+                                {' Answer'}
                             </div>
                         </div>
                     </div>

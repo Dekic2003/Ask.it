@@ -1,0 +1,17 @@
+.leaderboard-card{
+  width: 100%;
+  height: 18rem;
+  border-radius: 1rem;
+  border: 1px solid darkgray;
+  overflow: hidden;
+  margin-top: 1rem;
+}
+.leaderboard-card-table{
+  overflow-y: scroll;
+  overflow-x: hidden;
+  height: 80%;
+  padding-bottom: 1rem;
+}
+.leaderboard-card-table::-webkit-scrollbar{
+  display: none;
+}
