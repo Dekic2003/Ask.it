@@ -2,7 +2,6 @@ import React from "react";
 import '../styles/topUserCard.scss'
 
 const TopUserCard = (data) => {
-    console.log(data)
     return(
         <div className="top-user-card mt-2">
             <div>

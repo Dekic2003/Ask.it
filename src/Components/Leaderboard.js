@@ -3,7 +3,6 @@ import '../styles/Leaderboard.scss'
 import TopUserCard from "./topUserCard";
 
 const Leaderboard = (data) => {
-    console.log(data.data)
     return(
     <div className="leaderboard-card">
         <div className="border-bottom border-dark rounded-bottom bg-light p-3">
