@@ -2,6 +2,7 @@ import React from "react";
 import '../styles/hotQuestionsCard.scss'
 import {Link} from "react-router-dom";
 
+
 const HotQuestionCard = (data) => {
     return(
         <div className="hot-question-card mt-2">

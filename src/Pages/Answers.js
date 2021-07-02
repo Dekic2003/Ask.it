@@ -30,7 +30,7 @@ const Answers = () => {
                             <div className="d-flex justify-content-center">
                                 <h4>No answers yet.</h4>
                             </div>
-                            <PostAnswerCard/>
+                            <PostAnswerCard question={Question.id} question_author={Question.author_id}/>
                         </div>
                     </div>
                 </main>
