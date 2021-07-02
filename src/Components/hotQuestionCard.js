@@ -1,9 +1,11 @@
 import React from "react";
 import '../styles/hotQuestionsCard.scss'
+import {Link} from "react-router-dom";
 
 const HotQuestionCard = (data) => {
     return(
         <div className="hot-question-card mt-2">
+            <Link to={`/question/${data.data.id}/${data.data.question}`} className="link">
             <div>
                 <h6>{data.data.question}</h6>
             </div>
@@ -25,7 +27,7 @@ const HotQuestionCard = (data) => {
                         </svg> {data.data.dislikes}</p>
                 </div>
             </div>
-
+            </Link>
         </div>
     )
 }

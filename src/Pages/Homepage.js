@@ -7,6 +7,7 @@ import QuestionCard from "../Components/questionCard";
 import Leaderboard from "../Components/Leaderboard";
 import HotQuestions from "../Components/hotQuestions";
 import Header from "../Components/header";
+import PostQuestionCard from "../Components/postQuestionCard";
 
 const Homepage = () => {
 
@@ -29,6 +30,7 @@ const Homepage = () => {
         <main className="container mt-2">
             <div className="row ">
                 <div className="col-md-8">
+                    <PostQuestionCard/>
                     {
                         Questions.map((item,i)=>{
                             return(

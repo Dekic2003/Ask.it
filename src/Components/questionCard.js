@@ -21,7 +21,7 @@ const QuestionCard = (data) => {
                             </div>
                         </div>
                         <div className="col-md-2">
-                            <div type="button" className="btn btn-danger">
+                            <div className="btn btn-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
                                     <path
@@ -32,7 +32,7 @@ const QuestionCard = (data) => {
                         </div>
                         <div className="col-md-4">
                             <Link to={`/question/${data.data.id}/${data.data.question}`}>
-                                <div type="button" className="btn btn-secondary">
+                                <div className="btn btn-secondary">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                          className="bi bi-chat-left-text" viewBox="0 0 16 16">
                                         <path

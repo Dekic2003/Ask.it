@@ -75,12 +75,11 @@ const Header = (bool) => {
                     </a>
 
                     <ul className="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-                        <li><a href="#" className="nav-link px-2 text-white">Home</a></li>
-                        <li><a href="#" className="nav-link px-2 text-white">My questions</a></li>
+                        <li><Link to={"/"} className="nav-link px-2 text-white">Home</Link></li>
                     </ul>
                     <div className="text-end">
                         <Link to={'/login'} style={{textDecoration:'none'}}><div className="btn btn-outline-light me-2">Login</div></Link>
-                        <button type="button" className="btn btn-warning">Sign-up</button>
+                        <Link to={'/register'} style={{textDecoration:'none'}}><div className="btn btn-success">Register</div></Link>
                     </div>
                 </div>
             </div>

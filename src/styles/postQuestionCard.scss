@@ -1,0 +1,34 @@
+.questionText{
+  border: none;
+  border-bottom: 2px solid black;
+  width: 95%;
+}
+.questionText:focus{
+  border: none;
+  outline: none;
+  border-bottom: 2px solid green;
+
+}
+.tooltip-wrap {
+  position: relative;
+}
+.tooltip-wrap .tooltip-content {
+  display: none;
+  position: absolute;
+  top: 5%;
+  left: 1%;
+  right: 1%;
+  background-color: gray;
+  padding: .5em;
+  width:7rem;
+  z-index: 2;
+  border-radius: 0.4rem;
+}
+.tooltip-wrap:hover .tooltip-content {
+  display: block;
+  color: white!important;
+}
+.tooltip-content{
+  margin: 0;
+  padding: 0;
+}

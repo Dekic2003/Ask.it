@@ -9,3 +9,14 @@
   box-shadow: 0px 10px 13px -7px #000000, 0px 16px 39px 5px rgba(0,0,0,0);
   cursor:pointer;
 }
+.link{
+  text-decoration: none;
+  &:focus, &:hover, &:visited, &:link, &:active {
+    text-decoration: none;
+  }
+  color: black;
+}
+.link:focus, :hover, :visited, :link, :active {
+  text-decoration: none;
+  color: black;
+}
