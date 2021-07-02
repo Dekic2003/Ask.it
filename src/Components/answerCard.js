@@ -1,16 +1,16 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const QuestionCard = (data) => {
+const AnswerCard = (data) => {
     return(
         <div>
             <div
                 className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                 <div className="col p-4 d-flex flex-column position-static">
-                    <strong className="d-inline-block mb-2 text-success">{data.data.author} asks:</strong>
-                    <h3 className="mb-0">{data.data.question}</h3>
+                    <strong className="d-inline-block mb-2 text-secondary">{data.data.author} answers:</strong>
+                    <h3 className="mb-0">{data.data.answer}</h3>
                     <div className="row mt-3">
-                        <div className="col-md-2 ">
+                        <div className="col-md-1 ">
                             <div type="button" className="btn btn-success">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
@@ -20,7 +20,7 @@ const QuestionCard = (data) => {
                                 {` ${data.data.likes}`}
                             </div>
                         </div>
-                        <div className="col-md-2">
+                        <div className="col-md-1">
                             <div type="button" className="btn btn-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
@@ -30,24 +30,10 @@ const QuestionCard = (data) => {
                                 {` ${data.data.dislikes}`}
                             </div>
                         </div>
-                        <div className="col-md-4">
-                            <Link to={`/question/${data.data.id}/${data.data.question}`}>
-                                <div type="button" className="btn btn-secondary">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                         className="bi bi-chat-left-text" viewBox="0 0 16 16">
-                                        <path
-    d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H4.414A2 2 0 0 0 3 11.586l-2 2V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12.793a.5.5 0 0 0 .854.353l2.853-2.853A1 1 0 0 1 4.414 12H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
-                                        <path
-    d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
-                                    </svg>
-                                    {' Answer'}
-                                </div>
-                            </Link>
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     )
 }
-export default QuestionCard;
+export default AnswerCard;
