@@ -5,6 +5,8 @@ import hotQuestionsReducer from "./reducers/hotQuestions";
 import answersReducer from "./reducers/answers";
 import questionByIdReducer from "./reducers/questionById";
 import authReducer from "./reducers/authentication";
+import {persistReducer } from 'redux-persist'
+import storage from 'redux-persist/lib/storage'
 
 const rootReducers= combineReducers({
     questionsReducer,
@@ -15,4 +17,12 @@ const rootReducers= combineReducers({
     authReducer
 })
 
-export default rootReducers;
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: ['authReducer'],
+}
+
+const persistedReducer = persistReducer(persistConfig,rootReducers);
+
+export default persistedReducer;

@@ -37,3 +37,13 @@
   border-bottom: 2px solid green;
 
 }
+.err-msg{
+  color: red;
+  font-size: 1rem;
+  display: none;
+}
+.err-msg-active{
+  color: red;
+  font-size: 1rem;
+  display: block;
+}

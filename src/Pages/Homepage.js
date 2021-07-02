@@ -15,7 +15,6 @@ const Homepage = () => {
     const Questions=useSelector((state)=>state.questionsReducer.Questions);
     const TopUsers=useSelector((state)=>state.topUsersReducer.Users)
     const HotQuestion=useSelector((state)=>state.hotQuestionsReducer.Questions)
-    console.log(HotQuestions)
 
     useEffect(()=>{
         dispatch(fetchQuestions());
@@ -26,7 +25,7 @@ const Homepage = () => {
 
     return(
         <div>
-            <Header bool={false}/>
+            <Header/>
         <main className="container mt-2">
             <div className="row ">
                 <div className="col-md-8">

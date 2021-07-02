@@ -2,13 +2,16 @@ import React,{useState} from "react";
 import NotificationCard from "./notificationCard";
 import {Link} from 'react-router-dom'
 import '../styles/header.scss'
+import {useSelector,useDispatch} from "react-redux";
+import {signOut} from "../store/actions/authentication";
 
-const Header = (bool) => {
+const Header = () => {
     const [isProfileVisible,setIsProfileVisible]=useState(false)
     const [isNotificationVisible,setIsNotificationVisible]=useState(false)
+    const User = useSelector((state)=>state.authReducer.USER)
+    const dispatch=useDispatch();
 
-
-    if(bool===true){
+    if(User!==null){
         return(
             <header className="p-3 bg-dark text-white">
                 <div className="container">
@@ -56,7 +59,7 @@ const Header = (bool) => {
                                 <li>
                                     <hr className="dropdown-divider"/>
                                 </li>
-                                <li><a className="dropdown-item" href="#">Sign out</a></li>
+                                <li><a onClick={()=>{dispatch(signOut())}} className="dropdown-item" href="">Sign out</a></li>
                             </ul>
                         </div>
                     </div>

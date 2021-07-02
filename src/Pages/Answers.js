@@ -6,6 +6,7 @@ import fetchQuestionById from "../store/actions/questionById";
 import QuestionCardById from "../Components/questionCardById";
 import Header from "../Components/header";
 import AnswerCard from "../Components/answerCard";
+import PostAnswerCard from "../Components/postAnswerCard";
 
 const Answers = () => {
 
@@ -13,8 +14,6 @@ const Answers = () => {
     const {id}=useParams();
     const Question=useSelector((state)=>state.questionByIdReducer.Question)
     const Answers=useSelector((state)=>state.answersReducer.Answers)
-    console.log(Question)
-    console.log(Answers)
 
     useEffect(()=>{
         dispatch(fetchAnswers(id));
@@ -31,6 +30,7 @@ const Answers = () => {
                             <div className="d-flex justify-content-center">
                                 <h4>No answers yet.</h4>
                             </div>
+                            <PostAnswerCard/>
                         </div>
                     </div>
                 </main>
@@ -52,6 +52,7 @@ const Answers = () => {
                                 )
                             })
                         }
+                        <PostAnswerCard/>
                     </div>
                 </div>
             </main>

@@ -3,7 +3,7 @@ import register from '../assets/register.jpg'
 import '../styles/login.scss'
 import {useDispatch} from "react-redux";
 import {signUp} from "../store/actions/authentication";
-import {Link} from "react-router-dom";
+import {Link, useHistory} from "react-router-dom";
 
 const Register = () => {
     const dispatch=useDispatch();
@@ -11,6 +11,38 @@ const Register = () => {
     const [surname,setSurname]=useState(null);
     const [email,setEmail]=useState(null);
     const [pass,setPass]=useState(null)
+    const [errorMsg,setErrorMsg]=useState('');
+    const [showErr,setShowErr]=useState(false);
+    const navigation =useHistory();
+
+
+    const validation = () => {
+        if(email===null || email===''){
+            setErrorMsg("Email is required")
+            setShowErr(true)
+            return 0
+        }
+        else if(!/\S+@\S+\.\S+/.test(email)){
+            setErrorMsg("Email is invalid")
+            setShowErr(true)
+            return 0
+        }
+        else if(pass===null || pass===''){
+            setErrorMsg("Password is required")
+            setShowErr(true)
+            return 0
+        }
+        else if(pass.length<5){
+            setErrorMsg("Password has to be 5 characters")
+            setShowErr(true)
+            return 0
+        }
+        else {
+            setShowErr(false);
+            dispatch(signUp(name,surname,email,pass,navigation))
+        }
+    }
+
     return(
         <div className="container vw-100 vh-100 d-flex justify-content-center align-items-center">
             <div className="row  w-100 border shadow">
@@ -19,6 +51,9 @@ const Register = () => {
                 <div className="d-flex justify-content-center flex-column ">
                     <div className="d-flex mt-4  justify-content-center">
                     <h1>Register</h1>
+                    </div>
+                    <div className="d-flex mt-4  justify-content-center">
+                    <p className={`${(showErr)?'err-msg-active':'err-msg'}`}>{errorMsg}</p>
                     </div>
                     <div className="d-flex mt-4  justify-content-center">
                         <input placeholder="Name(optional)" className="login-input" type="email" required onChange={(event)=>setName(event.target.value)}/>
@@ -33,7 +68,7 @@ const Register = () => {
                     <input placeholder="Password" className="login-input" type="password" minLength="5" required onChange={(event)=>setPass(event.target.value)}/>
                     </div>
                     <div className="d-flex mt-4  justify-content-center">
-                        <p onClick={()=>{dispatch(signUp(name,surname,email,pass))}} className="exp-btn">Register</p>
+                        <p onClick={()=>{validation()}} className="exp-btn">Register</p>
                     </div>
                     <div className="d-flex mt-4  justify-content-center">
                         <p>Already have an account? <Link to={'/login'}>Login here!</Link></p>

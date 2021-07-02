@@ -1,15 +1,21 @@
-import React from 'react'
+import React,{useState}from 'react'
 import '../styles/postQuestionCard.scss'
+import {useSelector,useDispatch} from "react-redux";
+import postQuestion from "../store/actions/postQuestion";
 
 const PostQuestionCard = () => {
-    if(0==1){
+    const dispatch=useDispatch();
+    const User = useSelector((state) => state.authReducer.USER)
+    const [question,setQuestion]=useState('')
+
+    if(User){
     return(
         <div className="border  shadow-sm rounded w-100 mb-3">
             <div className='row p-3'>
                 <div className="col-11 d-flex justify-content-center align-items-center">
-                    <input placeholder="Type your question here" type="text" className="questionText"/>
+                    <input placeholder="Type your question here" type="text" className="questionText" onChange={(event)=>setQuestion(event.target.value)}/>
                 </div>
-                <div className="col-1 btn btn-success d-flex justify-content-center align-items-center" >
+                <div onClick={()=>{dispatch(postQuestion(User.access_token,question,User.id))}} className="col-1 btn btn-success d-flex justify-content-center align-items-center" >
                     <p style={{padding:0,margin:0}}>Post</p>
                 </div>
             </div>
