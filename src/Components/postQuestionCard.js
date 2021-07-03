@@ -15,7 +15,7 @@ const PostQuestionCard = () => {
                 <div className="col-11 d-flex justify-content-center align-items-center">
                     <input placeholder="Type your question here" type="text" className="questionText" onChange={(event)=>setQuestion(event.target.value)}/>
                 </div>
-                <div onClick={()=>{dispatch(postQuestion(User.access_token,question,User.id))}} className="col-1 btn btn-success d-flex justify-content-center align-items-center" >
+                <div onClick={()=>{dispatch(postQuestion(User.access_token,question,User.id));setQuestion('')}} className="col-1 btn btn-success d-flex justify-content-center align-items-center" >
                     <p style={{padding:0,margin:0}}>Post</p>
                 </div>
             </div>

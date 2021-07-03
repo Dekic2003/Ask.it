@@ -8,6 +8,7 @@ import Leaderboard from "../Components/Leaderboard";
 import HotQuestions from "../Components/hotQuestions";
 import Header from "../Components/header";
 import PostQuestionCard from "../Components/postQuestionCard";
+import fetchNotification from "../store/actions/notifications";
 
 const Homepage = () => {
 
@@ -15,11 +16,16 @@ const Homepage = () => {
     const Questions=useSelector((state)=>state.questionsReducer.Questions);
     const TopUsers=useSelector((state)=>state.topUsersReducer.Users)
     const HotQuestion=useSelector((state)=>state.hotQuestionsReducer.Questions)
+    const User = useSelector((state)=>state.authReducer.USER)
+
 
     useEffect(()=>{
         dispatch(fetchQuestions());
         dispatch(fetchTopUsers());
         dispatch(fetchHotQuestions());
+        if(User){
+            dispatch(fetchNotification(User.access_token,User.id))
+        }
     },[])
 
 

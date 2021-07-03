@@ -1,6 +1,7 @@
 import ACTIONS from '../actions';
 import axios from 'axios';
 import APIURL from "../../APIURL";
+import fetchNotification from "./notifications";
 
 const signIn = (email, password,navigation) => (dispatch) => {
     dispatch({type: ACTIONS.SIGN_IN_START, payload: null});
@@ -10,6 +11,7 @@ const signIn = (email, password,navigation) => (dispatch) => {
             if(res.data.success){
                 dispatch({type: ACTIONS.SIGN_IN_SUCCESS, payload: res.data.data});
                 navigation.push('/')
+                dispatch(fetchNotification(res.data.data.access_token,res.data.data.id))
             }
         })
         .catch((err) => {
@@ -31,6 +33,7 @@ const signUp = (name,surname, email, password,navigation) => (dispatch) => {
             if(res.data.success){
                 dispatch({type: ACTIONS.SIGN_UP_SUCCESS, payload: res.data.data});
                 navigation.push('/')
+                dispatch(fetchNotification(res.data.data.access_token,res.data.data.id))
             }
         })
         .catch((err) => {

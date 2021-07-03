@@ -19,6 +19,7 @@ const Answers = () => {
         dispatch(fetchAnswers(id));
         dispatch(fetchQuestionById(id))
     },[])
+    console.log(Question);
     if(Answers===null){
         return(
             <div>

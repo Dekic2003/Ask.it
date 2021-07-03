@@ -3,6 +3,7 @@ import '../styles/Leaderboard.scss'
 import TopUserCard from "./topUserCard";
 
 const Leaderboard = (data) => {
+    if(data.data){
     return(
     <div className="leaderboard-card">
         <div className="border-bottom border-dark rounded-bottom bg-light p-3">
@@ -15,6 +16,17 @@ const Leaderboard = (data) => {
                 })
             }
         </div>
-    </div>)
+    </div>)}
+    else {
+        return(
+            <div className="leaderboard-card">
+                <div className="border-bottom border-dark rounded-bottom bg-light p-3">
+                    <h4>Top users</h4>
+                </div>
+                <div className="leaderboard-card-table d-flex align-items-center flex-column">
+                    Whoops no users...
+                </div>
+            </div>)
+    }
 }
 export default Leaderboard;
