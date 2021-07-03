@@ -1,29 +1,24 @@
 import ACTIONS from "../actions";
 
 let initialState = {
-    Answers:[],
+    Questions:[],
     loading:false,
     error:null
 }
 
-const answersReducer = (state=initialState,action)=>{
+const myQuestionsReducer = (state=initialState,action)=>{
     switch (action.type){
-        case ACTIONS.FETCH_ANSWERS_START_OPEN:
-            return{
-                ...initialState,
-                loading:true,
-            }
-        case ACTIONS.FETCH_ANSWERS_START_OPENed:
+        case ACTIONS.FETCH_MY_QUESTIONS_START:
             return{
                 ...state,
                 loading:true,
             }
-        case ACTIONS.FETCH_ANSWERS_SUCCESS:
+        case ACTIONS.FETCH_MY_QUESTIONS_SUCCESS:
             return {
                 ...initialState,
-                Answers: action.payload
+                Questions: action.payload
             }
-        case ACTIONS.FETCH_ANSWERS_ERROR:
+        case ACTIONS.FETCH_MY_QUESTIONS_ERROR:
             return {
                 ...initialState,
                 error: action.payload
@@ -32,4 +27,4 @@ const answersReducer = (state=initialState,action)=>{
             return state
     }
 }
-export default answersReducer;
+export default myQuestionsReducer;

@@ -1,7 +1,7 @@
 import ACTIONS from '../actions';
 import axios from 'axios';
 import APIURL from "../../APIURL";
-import fetchNotification from "./notifications";
+import {fetchNotification} from "./notifications";
 
 const signIn = (email, password,navigation) => (dispatch) => {
     dispatch({type: ACTIONS.SIGN_IN_START, payload: null});

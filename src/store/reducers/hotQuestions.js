@@ -10,7 +10,7 @@ const hotQuestionsReducer = (state=initialState,action)=>{
     switch (action.type){
         case ACTIONS.FETCH_HOT_QUESTIONS_START:
             return{
-                ...initialState,
+                ...state,
                 loading:true,
             }
         case ACTIONS.FETCH_HOT_QUESTIONS_SUCCESS:

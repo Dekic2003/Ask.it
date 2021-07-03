@@ -10,44 +10,35 @@ import Header from "../Components/header";
 import PostQuestionCard from "../Components/postQuestionCard";
 import {fetchNotification} from "../store/actions/notifications";
 
-const Homepage = () => {
+const MyQuestions = () => {
 
     const dispatch=useDispatch();
     const Questions=useSelector((state)=>state.questionsReducer.Questions);
-    const TopUsers=useSelector((state)=>state.topUsersReducer.Users)
-    const HotQuestion=useSelector((state)=>state.hotQuestionsReducer.Questions)
     const User = useSelector((state)=>state.authReducer.USER)
 
 
     useEffect(()=>{
-        dispatch(fetchQuestions());
-        dispatch(fetchTopUsers());
-        dispatch(fetchHotQuestions());
+        dispatch(fetchQuestions(User.id));
     },[])
 
 
     return(
         <div>
             <Header/>
-        <main className="container mt-2">
-            <div className="row ">
-                <div className="col-md-8">
-                    <PostQuestionCard/>
-                    {
-                        Questions.map((item,i)=>{
-                            return(
+            <main className="container mt-2">
+                <div className="row ">
+                    <div className="col-md-8">
+                        {
+                            Questions.map((item,i)=>{
+                                return(
                                     <QuestionCard data={item}/>
-                            )
-                        })
-                    }
+                                )
+                            })
+                        }
+                    </div>
                 </div>
-                <div className="col-md-4">
-                        <Leaderboard data={TopUsers}/>
-                         <HotQuestions data={HotQuestion}/>
-                </div>
-            </div>
-        </main>
+            </main>
         </div>
     )
 }
-export default Homepage
+export default MyQuestions

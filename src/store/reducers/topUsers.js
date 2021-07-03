@@ -10,7 +10,7 @@ const topUsersReducer = (state=initialState,action)=>{
     switch (action.type){
         case ACTIONS.FETCH_TOP_USERS_START:
             return{
-                ...initialState,
+                ...state,
                 loading:true,
             }
         case ACTIONS.FETCH_TOP_USERS_SUCCESS:

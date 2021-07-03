@@ -7,6 +7,8 @@ import QuestionCardById from "../Components/questionCardById";
 import Header from "../Components/header";
 import AnswerCard from "../Components/answerCard";
 import PostAnswerCard from "../Components/postAnswerCard";
+import ACTIONS from "../store/actions";
+import Loading from "../Components/loading";
 
 const Answers = () => {
 
@@ -14,12 +16,13 @@ const Answers = () => {
     const {id}=useParams();
     const Question=useSelector((state)=>state.questionByIdReducer.Question)
     const Answers=useSelector((state)=>state.answersReducer.Answers)
+    const loading=useSelector((state)=>state.questionByIdReducer.loading)
+
 
     useEffect(()=>{
-        dispatch(fetchAnswers(id));
+        dispatch(fetchAnswers(id,ACTIONS.FETCH_ANSWERS_START_OPEN));
         dispatch(fetchQuestionById(id))
     },[])
-    console.log(Question);
     if(Answers===null){
         return(
             <div>
@@ -58,7 +61,6 @@ const Answers = () => {
                 </div>
             </main>
         </div>
-    )}
+    )}}
 
-}
 export default Answers;

@@ -8,4 +8,10 @@ const fetchNotification = (token,id) => (dispatch) => {
         .then((res)=>dispatch({type:ACTIONS.FETCH_NOTIFICATIONS_SUCCESS,payload:res.data.data}))
         .catch((err)=>dispatch({type:ACTIONS.FETCH_NOTIFICATIONS_ERROR,payload:err}))
 }
-export default fetchNotification;
+const putNotification = (token,id) => (dispatch) => {
+    dispatch({type:ACTIONS.PUT_NOTIFICATIONS_READ_START,payload:''});
+    axios.put(`${APIURL}user/notification/readAll/${id}`,{},{headers:{authorization:`Bearer ${token}`}})
+        .then((res)=>dispatch({type:ACTIONS.PUT_NOTIFICATIONS_READ_SUCCESS,payload:res.data.data}))
+        .catch((err)=>dispatch({type:ACTIONS.PUT_NOTIFICATIONS_READ_ERROR,payload:err}))
+}
+export {fetchNotification,putNotification};

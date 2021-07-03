@@ -6,6 +6,8 @@ import Homepage from "./Pages/Homepage";
 import Answers from "./Pages/Answers";
 import Login from "./Pages/Login";
 import Register from "./Pages/Register";
+import MyQuestions from "./Pages/MyQuestions";
+import Profile from "./Pages/Profile";
 
 const Navigation = () =>{
     return(
@@ -15,6 +17,8 @@ const Navigation = () =>{
                 <Route path="/question/:id/:question" exact component={Answers}/>
                 <Route path="/login" exact component={Login}/>
                 <Route path="/register" exact component={Register}/>
+                <Route path="/myquestions" exact component={MyQuestions}/>
+                <Route path="/profile" exact component={Profile}/>
             </Switch>
         </BrowserRouter>
     )

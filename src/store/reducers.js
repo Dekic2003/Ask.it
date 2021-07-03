@@ -8,6 +8,7 @@ import authReducer from "./reducers/authentication";
 import notificationsReducer from "./reducers/notifications";
 import {persistReducer } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
+import myQuestionsReducer from "./reducers/myQuestions";
 
 const rootReducers= combineReducers({
     questionsReducer,
@@ -16,7 +17,8 @@ const rootReducers= combineReducers({
     answersReducer,
     questionByIdReducer,
     authReducer,
-    notificationsReducer
+    notificationsReducer,
+    myQuestionsReducer
 })
 
 const persistConfig = {

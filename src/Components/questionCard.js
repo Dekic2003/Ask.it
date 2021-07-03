@@ -1,7 +1,11 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
+import {useDispatch, useSelector} from "react-redux";
+import {questionReaction} from "../store/actions/reactions";
 
 const QuestionCard = (data) => {
+    const User = useSelector((state)=>state.authReducer.USER)
+    const dispatch=useDispatch();
     return(
         <div>
             <div
@@ -11,7 +15,7 @@ const QuestionCard = (data) => {
                     <h3 className="mb-0">{data.data.question}</h3>
                     <div className="row mt-3">
                         <div className="col-md-2 ">
-                            <div type="button" className="btn btn-success">
+                            <div onClick={()=>{dispatch(questionReaction(User.access_token,data.data.author_id,data.data.id,true))}} className="btn btn-success">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
                                     <path
@@ -21,7 +25,7 @@ const QuestionCard = (data) => {
                             </div>
                         </div>
                         <div className="col-md-2">
-                            <div className="btn btn-danger">
+                            <div onClick={()=>{dispatch(questionReaction(User.access_token,data.data.author_id,data.data.id,false))}} className="btn btn-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
                                     <path
