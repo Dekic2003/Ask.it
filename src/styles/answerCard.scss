@@ -1,0 +1,52 @@
+.exp-btn {
+  display: flex;
+  margin-top: 10%;
+  cursor: pointer;
+  all: unset;
+  font-family: 'Source Sans Pro',sans-serif;
+  font-weight: 600;
+  color: white;
+  padding: 10px;
+  font-size: 1.2rem;
+  text-transform: none;
+  padding-left: 25px;
+  text-decoration: none;
+  padding-right: 25px;
+  border-radius: 30px;
+  background-color: green;
+  text-align: center;
+}
+
+.exp-btn:link {
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+}
+
+.exp-btn:hover {
+  color: white;
+  cursor: pointer;
+}
+.answer-input{
+  display: none;
+}
+.answer-input-active{
+  border: none;
+  border-bottom: 2px solid black;
+  font-size: 1.75rem;
+  width: 95%;
+  outline: none;
+
+}
+.answer-input-active:focus{
+  border: none;
+  width: 95%;
+  border-bottom: 2px solid green;
+}
+.answer{
+  display: none;
+}
+.answer-active{
+  display: block;
+}
+

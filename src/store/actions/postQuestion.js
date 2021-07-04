@@ -6,6 +6,7 @@ import fetchHotQuestions from "./hotQuestions";
 import fetchTopUsers from "./topUsers";
 
 const postQuestion = (token,question,author_id) => (dispatch) => {
+    if(question!==''){
         dispatch({type: ACTIONS.POST_QUESTION_START, payload: null});
         axios
             .post(`${APIURL}`, {question, author_id},{headers:{authorization:`Bearer ${token}`}})
@@ -18,5 +19,6 @@ const postQuestion = (token,question,author_id) => (dispatch) => {
             .catch((err) => {
                 dispatch({type: ACTIONS.POST_QUESTION_ERROR, payload: err});
             });
+    }
 }
 export default postQuestion;

@@ -37,11 +37,29 @@ const authReducer = (state = initialState, action) => {
         case ACTIONS.SIGN_UP_ERROR:
             return {
                 ...initialState,
-                USER: action.payload,
+                error: action.payload,
             };
         case ACTIONS.SIGN_OUT:
             return {
                 ...initialState,
+            };
+        case ACTIONS.UPDATE_USER_START:
+            return {
+                ...state,
+                loading: true,
+            };
+        case ACTIONS.UPDATE_USER_SUCCESS:
+            state.USER.id=action.payload.id;
+            state.USER.name=action.payload.name;
+            state.USER.email=action.payload.email;
+            state.USER.surname=action.payload.surname;
+            return {
+                ...state,
+            };
+        case ACTIONS.UPDATE_USER_ERROR:
+            return {
+                ...state,
+                error: action.payload,
             };
         default:
             return state;

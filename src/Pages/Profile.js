@@ -23,21 +23,20 @@ const Profile = () => {
                                     <h1>Profile info</h1>
                                 </div>
                                 <div className="d-flex mt-4  justify-content-center">
-                                    <div className='d-flex flex-row mt-2t'>
+                                    <div className='d-flex flex-row mt-2t justify-content-between w-100'>
                                         <h3>Name:</h3>
                                         <h3>{User.name}</h3>
                                     </div>
                                 </div>
                                 <div className="d-flex mt-4  justify-content-center">
-                                    <div className='d-flex flex-row mt-2t'>
+                                    <div className='d-flex flex-row mt-2t justify-content-between w-100'>
                                         <h3>Surname:</h3>
                                         <h3>{User.surname}</h3>
                                     </div>
                                 </div>
                                 <div className="d-flex mt-4  justify-content-center">
-                                    <div className='d-flex flex-row mt-2t'>
-                                        <h3>Email:</h3>
-                                        <h3>{User.email}</h3>
+                                    <div className='d-flex flex-row mt-2t justify-content-between w-100'>
+                                        <h3>Email: {User.email}</h3>
                                     </div>
                                 </div>
                             </div>

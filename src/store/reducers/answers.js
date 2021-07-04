@@ -13,7 +13,7 @@ const answersReducer = (state=initialState,action)=>{
                 ...initialState,
                 loading:true,
             }
-        case ACTIONS.FETCH_ANSWERS_START_OPENed:
+        case ACTIONS.FETCH_ANSWERS_START_OPENED:
             return{
                 ...state,
                 loading:true,

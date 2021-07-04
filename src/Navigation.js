@@ -8,6 +8,8 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import MyQuestions from "./Pages/MyQuestions";
 import Profile from "./Pages/Profile";
+import ChangeInfo from "./Pages/ChangeInfo";
+import ChangePassword from "./Pages/ChangePassword";
 
 const Navigation = () =>{
     return(
@@ -19,6 +21,8 @@ const Navigation = () =>{
                 <Route path="/register" exact component={Register}/>
                 <Route path="/myquestions" exact component={MyQuestions}/>
                 <Route path="/profile" exact component={Profile}/>
+                <Route path="/profile/changeinfo" exact component={ChangeInfo}/>
+                <Route path="/profile/changepassword" exact component={ChangePassword}/>
             </Switch>
         </BrowserRouter>
     )

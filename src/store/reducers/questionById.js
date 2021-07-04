@@ -10,7 +10,7 @@ const questionByIdReducer = (state=initialState,action)=>{
     switch (action.type){
         case ACTIONS.FETCH_QUESTIONS_ID_START:
             return{
-                ...initialState,
+                ...state,
                 loading:true,
             }
         case ACTIONS.FETCH_QUESTIONS_ID_SUCCESS:

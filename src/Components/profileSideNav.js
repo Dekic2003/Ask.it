@@ -1,11 +1,12 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 
 const ProfileSideNav = () => {
     return(
         <div id="sidebarMenu" className="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse h-100 w-100">
             <div className="position-sticky pt-3">
                 <ul className="nav flex-column">
-                    <li className="nav-item">
+                    <Link to={'/profile'} style={{textDecoration:'none'}}><li className="nav-item">
                         <a className="nav-link" aria-current="page" href="#" style={{fontSize:'1rem',fontWeight:'bold',color:'darkgreen'}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                  className="bi bi-info-square" viewBox="0 0 16 16">
@@ -16,8 +17,8 @@ const ProfileSideNav = () => {
                             </svg>
                             {' Profile info'}
                         </a>
-                    </li>
-                    <li className="nav-item">
+                    </li></Link>
+                    <Link to={'/profile/changeinfo'} style={{textDecoration:'none'}}><li className="nav-item">
                         <a className="nav-link" aria-current="page" href="#" style={{fontSize:'1rem',fontWeight:'bold',color:'darkgreen'}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                  className="bi bi-arrow-repeat" viewBox="0 0 16 16">
@@ -28,8 +29,8 @@ const ProfileSideNav = () => {
                             </svg>
                             {' Change Profile info'}
                         </a>
-                    </li>
-                    <li className="nav-item">
+                    </li></Link>
+                    <Link to={'/profile/changepassword'} style={{textDecoration:'none'}}><li className="nav-item">
                         <a className="nav-link" aria-current="page" href="#" style={{fontSize:'1rem',fontWeight:'bold',color:'darkgreen'}}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                                  className="bi bi-pencil" viewBox="0 0 16 16">
@@ -38,7 +39,7 @@ const ProfileSideNav = () => {
                             </svg>
                             {' Change password'}
                         </a>
-                    </li>
+                    </li></Link>
 
 
 
