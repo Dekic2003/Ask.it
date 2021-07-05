@@ -1,2 +1,2 @@
-const APIURL ="http://localhost:8000/"
+const APIURL ="https://askit-deniz.herokuapp.com/com/"
 export default APIURL;
