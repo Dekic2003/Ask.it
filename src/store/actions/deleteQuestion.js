@@ -5,6 +5,8 @@ import ACTIONS from "../actions";
 import fetchQuestions from "./questions";
 import fetchQuestionById from "./questionById";
 import fetchMyQuestions from "./myQuestions";
+import fetchHotQuestions from "./hotQuestions";
+import fetchTopUsers from "./topUsers";
 
 const deleteQuestion = (token,id,userId) => (dispatch) => {
     axios.delete(`${APIURL}${id}`,{headers:{authorization:`Bearer ${token}`}})
@@ -12,6 +14,8 @@ const deleteQuestion = (token,id,userId) => (dispatch) => {
             if (res.data.success){
                 dispatch(fetchQuestions())
                 dispatch(fetchMyQuestions(userId))
+                dispatch(fetchHotQuestions())
+                dispatch(fetchTopUsers())
             }})
         .catch((err)=>console.log(err))
 }

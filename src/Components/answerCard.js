@@ -30,7 +30,7 @@ const AnswerCard = (data) => {
                     </div>
                     <div className="row mt-3">
                         <div className="col-md-1 ">
-                            <div onClick={()=>{dispatch(answerReaction(User.access_token,data.data.author_id,data.data.id,true,data.data.question_id))}} className="btn btn-success">
+                            <div onClick={()=>{dispatch(answerReaction(User.access_token,User.id,data.data.id,true,data.data.question_id))}} className="btn btn-success">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-up" viewBox="0 0 16 16">
                                     <path
@@ -40,7 +40,7 @@ const AnswerCard = (data) => {
                             </div>
                         </div>
                         <div className="col-md-9">
-                            <div  onClick={()=>{dispatch(answerReaction(User.access_token,data.data.author_id,data.data.id,false,data.data.question_id))}} className="btn btn-danger">
+                            <div  onClick={()=>{dispatch(answerReaction(User.access_token,User.id,data.data.id,false,data.data.question_id))}} className="btn btn-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                      className="bi bi-hand-thumbs-down" viewBox="0 0 16 16">
                                     <path
