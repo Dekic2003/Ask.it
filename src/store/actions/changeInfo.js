@@ -11,4 +11,12 @@ const changeInfo = (token,id,name,email,surname,navigation) => (dispatch) => {
          }
         }).catch((err)=>console.log(err))
 }
-export default changeInfo;
+const changePass = (token,id,password,newPassword,navigation) => (dispatch) => {
+    axios.put(`${APIURL}user/resetpass`,{id,password,newPassword},{headers:{authorization:`Bearer ${token}`}})
+        .then((res)=>{
+            if(res.data.success){
+                navigation.push('/');
+            }
+        }).catch((err)=>console.log(err))
+}
+export {changePass,changeInfo};

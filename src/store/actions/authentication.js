@@ -40,7 +40,8 @@ const signUp = (name,surname, email, password,navigation) => (dispatch) => {
             dispatch({type: ACTIONS.SIGN_UP_ERROR, payload: err});
         });
 };
-const signOut = () => (dispatch) => {
+const signOut = (navigation) => (dispatch) => {
+    navigation.push('/')
     dispatch({type: ACTIONS.SIGN_OUT, payload: null});
 };
 

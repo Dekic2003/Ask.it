@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import login from '../assets/login.jpg'
 import '../styles/login.scss'
-import {useDispatch, useSelector} from "react-redux";
+import {useDispatch} from "react-redux";
 import {signIn} from "../store/actions/authentication";
 import {Link,useHistory} from "react-router-dom";
 
@@ -11,6 +11,7 @@ const Login = () => {
     const [pass,setPass]=useState('');
     const [errorMsg,setErrorMsg]=useState('');
     const [showErr,setShowErr]=useState(false);
+
 
     const navigation =useHistory();
 
@@ -54,7 +55,6 @@ const Login = () => {
                     </div>
                     <div className="d-flex mt-4  justify-content-center">
                         <p className={`${(showErr)?'err-msg-active':'err-msg'}`}>{errorMsg}</p>
-
                     </div>
                     <div className="d-flex mt-4  justify-content-center">
                     <input placeholder="Email" className="login-input" type="email" required onChange={(event)=>setEmail(event.target.value)}/>

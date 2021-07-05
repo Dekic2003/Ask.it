@@ -5,6 +5,7 @@ import fetchQuestionById from "./questionById";
 import fetchAnswers from "./answers";
 
 const postAnswer = (token,question_id,question_author_id,author_id,answer) => (dispatch) => {
+    if(answer!==''){
     dispatch({type: ACTIONS.POST_ANSWER_START, payload: null});
     axios
         .post(`${APIURL}answer`, {question_author_id,question_id,answer, author_id},{headers:{authorization:`Bearer ${token}`}})
@@ -16,6 +17,6 @@ const postAnswer = (token,question_id,question_author_id,author_id,answer) => (d
         })
         .catch((err) => {
             dispatch({type: ACTIONS.POST_ANSWER_ERROR, payload: err});
-        });
+        });}
 }
 export default postAnswer;

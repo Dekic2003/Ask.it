@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import {useDispatch,useSelector} from "react-redux";
 import fetchQuestions from "../store/actions/questions";
 import fetchTopUsers from "../store/actions/topUsers";
@@ -8,15 +8,14 @@ import Leaderboard from "../Components/Leaderboard";
 import HotQuestions from "../Components/hotQuestions";
 import Header from "../Components/header";
 import PostQuestionCard from "../Components/postQuestionCard";
-import {fetchNotification} from "../store/actions/notifications";
-
+import '../styles/button.scss'
 const Homepage = () => {
 
     const dispatch=useDispatch();
     const Questions=useSelector((state)=>state.questionsReducer.Questions);
     const TopUsers=useSelector((state)=>state.topUsersReducer.Users)
     const HotQuestion=useSelector((state)=>state.hotQuestionsReducer.Questions)
-    const User = useSelector((state)=>state.authReducer.USER)
+    const [visible,setVisible]=useState(20)
 
 
     useEffect(()=>{
@@ -34,12 +33,15 @@ const Homepage = () => {
                 <div className="col-md-8">
                     <PostQuestionCard/>
                     {
-                        Questions.map((item,i)=>{
+                        Questions.slice(0,visible).map((item,i)=>{
                             return(
                                     <QuestionCard data={item}/>
                             )
                         })
                     }
+                    <div  className={`${(visible>Questions.length)?'d-none':'d-block  '}`} onClick={()=>(setVisible(visible+20))}>
+                        <p className="exp-btn">Load more</p>
+                    </div>
                 </div>
                 <div className="col-md-4">
                         <Leaderboard data={TopUsers}/>

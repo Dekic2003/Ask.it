@@ -5,6 +5,7 @@ import fetchQuestions from "./questions";
 import fetchHotQuestions from "./hotQuestions";
 import fetchTopUsers from "./topUsers";
 import fetchAnswers from "./answers";
+import fetchQuestionById from "./questionById";
 
 
 const answerReaction = (token,author,answer,reaction,question) => (dispatch) => {
@@ -24,7 +25,9 @@ const questionReaction = (token,author,question,reaction) => (dispatch) => {
             if(res.data.success){
             dispatch(fetchQuestions())
             dispatch(fetchHotQuestions())
-            dispatch(fetchTopUsers());}
+            dispatch(fetchTopUsers())
+            dispatch(fetchQuestionById(question))
+            ;}
         })
         .catch((err)=>dispatch({type:ACTIONS.POST_REACTION_ERROR}))
 }

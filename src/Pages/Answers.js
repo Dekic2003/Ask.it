@@ -8,7 +8,6 @@ import Header from "../Components/header";
 import AnswerCard from "../Components/answerCard";
 import PostAnswerCard from "../Components/postAnswerCard";
 import ACTIONS from "../store/actions";
-import Loading from "../Components/loading";
 
 const Answers = () => {
 
@@ -16,7 +15,6 @@ const Answers = () => {
     const {id}=useParams();
     const Question=useSelector((state)=>state.questionByIdReducer.Question)
     const Answers=useSelector((state)=>state.answersReducer.Answers)
-    const loading=useSelector((state)=>state.questionByIdReducer.loading)
 
 
     useEffect(()=>{

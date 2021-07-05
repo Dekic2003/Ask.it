@@ -4,8 +4,7 @@ import Header from "../Components/header";
 import {useDispatch, useSelector} from "react-redux";
 import '../styles/login.scss'
 import {useHistory} from "react-router-dom";
-import {signIn} from "../store/actions/authentication";
-import changeInfo from "../store/actions/changeInfo";
+import {changeInfo} from "../store/actions/changeInfo";
 
 const ChangeInfo = () => {
     const dispatch=useDispatch();

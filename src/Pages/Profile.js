@@ -2,8 +2,6 @@ import React from "react";
 import ProfileSideNav from "../Components/profileSideNav";
 import Header from "../Components/header";
 import {useSelector} from "react-redux";
-import login from "../assets/login.jpg";
-import {Link} from "react-router-dom";
 
 const Profile = () => {
     const User = useSelector((state)=>state.authReducer.USER)

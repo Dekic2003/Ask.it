@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 import NotificationCard from "./notificationCard";
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom'
 import '../styles/header.scss'
 import {useSelector,useDispatch} from "react-redux";
 import {signOut} from "../store/actions/authentication";
@@ -12,6 +12,7 @@ const Header = () => {
     const User = useSelector((state)=>state.authReducer.USER)
     const Notification = useSelector((state)=>state.notificationsReducer.Notifications)
     const NotificationR = useSelector((state)=>state.notificationsReducer.read)
+    const history=useHistory();
 
     const dispatch=useDispatch();
     useEffect(()=>{
@@ -68,7 +69,7 @@ const Header = () => {
                                 <li>
                                     <hr className="dropdown-divider"/>
                                 </li>
-                                <li><a onClick={()=>{dispatch(signOut())}} className="dropdown-item" href="">Sign out</a></li>
+                                <li><a onClick={()=>{dispatch(signOut(history))}} className="dropdown-item" href="">Sign out</a></li>
                             </ul>
                         </div>
                     </div>
