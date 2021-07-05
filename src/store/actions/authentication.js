@@ -29,7 +29,6 @@ const signUp = (name,surname, email, password,navigation) => (dispatch) => {
             password: password,
         })
         .then((res) => {
-            console.log(res.data)
             if(res.data.success){
                 dispatch({type: ACTIONS.SIGN_UP_SUCCESS, payload: res.data.data});
                 navigation.push('/')
