@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch,useSelector} from "react-redux";
-import fetchQuestions from "../store/actions/questions";
 import QuestionCard from "../Components/questionCard";
 import Header from "../Components/header";
+import fetchMyQuestions from "../store/actions/myQuestions";
 
 const MyQuestions = () => {
 
@@ -13,7 +13,7 @@ const MyQuestions = () => {
 
 
     useEffect(()=>{
-        dispatch(fetchQuestions(User.id));
+        dispatch(fetchMyQuestions(User.id));
     },[])
 
 
