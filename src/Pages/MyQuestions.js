@@ -1,8 +1,8 @@
 import React, {useEffect, useState} from 'react'
 import {useDispatch,useSelector} from "react-redux";
-import QuestionCard from "../Components/questionCard";
 import Header from "../Components/header";
 import fetchMyQuestions from "../store/actions/myQuestions";
+import MyQuestionCard from "../Components/myQuestionsCard";
 
 const MyQuestions = () => {
 
@@ -26,7 +26,7 @@ const MyQuestions = () => {
                         {
                             Questions.slice(0,visible).map((item,i)=>{
                                 return(
-                                    <QuestionCard data={item}/>
+                                    <MyQuestionCard data={item}/>
                                 )
                             })
                         }
