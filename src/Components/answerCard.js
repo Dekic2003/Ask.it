@@ -38,7 +38,7 @@ const AnswerCard = (data) => {
                                 {` ${data.data.likes}`}
                             </div>
                         </div>
-                        </div>
+
                         <div className="col-md-9">
                             <div  onClick={()=>{dispatch(answerReaction(User.access_token,User.id,data.data.id,false,data.data.question_id))}} className="btn btn-danger">
                                 <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
@@ -73,7 +73,7 @@ const AnswerCard = (data) => {
                             </div>
                         </div>
 
-
+                    </div>
                     </div>
                 </div>
             </div>
