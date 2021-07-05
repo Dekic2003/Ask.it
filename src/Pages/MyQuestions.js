@@ -7,7 +7,7 @@ import Header from "../Components/header";
 const MyQuestions = () => {
 
     const dispatch=useDispatch();
-    const Questions=useSelector((state)=>state.questionsReducer.Questions);
+    const Questions=useSelector((state)=>state.myQuestionsReducer.Questions);
     const User = useSelector((state)=>state.authReducer.USER)
     const [visible,setVisible]=useState(20)
 
